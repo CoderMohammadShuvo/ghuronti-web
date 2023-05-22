@@ -1,0 +1,60 @@
+.homeMain{
+    width: 100%;
+    height: 100%;
+    background: url('../../public/images/bannerImageBg.png');
+    background-size: 100% 436px;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+.homeHero{
+    width: 100%;
+    height: 500px;
+}
+.titleHero{
+    font-size: 36px;
+    font-family: PoppinsRegular;
+    text-align: center;
+}
+.heroBoxMain{
+    max-width: 1100px;
+    height: 290px;
+    background: linear-gradient(180deg, rgba(230, 248, 255, 0.33) 0%, rgba(229, 248, 255, 0.33) 100%);
+box-shadow: 0px 2px 12px rgba(25, 171, 227, 0.3);
+border-radius: 42px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+overflow: hidden;
+
+}
+.optionsOfHero{
+    width: 100%;
+    height: 86px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.optionsOfHero p{
+    font-size: 18px;
+    font-family: PoppinsRegular;
+    color: #092E3D;
+    margin-left: 10px;
+}
+
+.hajjButton{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.optionButton{
+    width: 13%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
