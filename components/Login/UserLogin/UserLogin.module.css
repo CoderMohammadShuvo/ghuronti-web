@@ -23,5 +23,63 @@
     background: #E6F8FF;
     border: 1px solid rgba(25, 171, 227, 0.3);
     border-radius: 5px;
+}
+.loginButton{
+    width: 323px;
+height: 53px;
+background: #4AB449;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+margin-top: 40px;
+border: none;
+color: white;
+font-family: PoppinsRegular;
+font-size: 16px;
+cursor:pointer;
+}
+.orBUtton{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-top: 50px;
+}
+.or{
+    font-family: PoppinsRegular;
+    font-size: 16px;
+    margin: 0px 10px;  
+}
+.signUpButton{
+    width: 323px;
+    height: 53px;
+    background: #26ADE2;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 40px;
+    border: none;
+    color: white;
+    font-family: PoppinsRegular;
+    font-size: 16px;
+    cursor:pointer;   
+}
+.createAcoutn{
+    background: #FFFFFF;
+border: 1px solid rgba(74, 180, 73, 0.5);
+box-shadow: 0px 2px 4px rgba(25, 171, 227, 0.3);
+border-radius: 5px;
+width: 323px;
+height: 53px;
+border: none;
+    color: #4AB449;
+    font-family: PoppinsRegular;
+    font-size: 16px;
+    cursor:pointer;  
+    margin-top: 40px;
+}
 
+.oAUtoh{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    cursor: pointer;
 }
