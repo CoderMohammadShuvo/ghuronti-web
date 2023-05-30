@@ -1,0 +1,28 @@
+.missionMain{
+    max-width: 769.47px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.mission{
+    width: 350px;
+height: 350px;
+background: url('../../../public/images/stitcky.png');
+background-position: left top;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+}
+.mission h1{
+  margin: 31px;
+  font-weight: 500;
+font-size: 30px;
+color: #092E3D;
+font-family: PoppinsRegular;
+}
+.mission p{
+    margin-left: 95px;
+    font-family: PoppinsRegular;
+    font-weight: 400;
+font-size: 16px;
+color: #092E3D;
+}

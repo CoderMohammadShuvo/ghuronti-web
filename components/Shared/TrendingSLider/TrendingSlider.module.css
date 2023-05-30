@@ -1,0 +1,75 @@
+.treandingSlider{
+    width: 80%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+.packageBox{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  
+}
+.packageBoxMain{
+    width: 80%;
+    margin-top: 50px;
+    height: 470px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 16px rgba(74, 180, 73, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+.packageBoxMain img{
+   width: 100%;
+}
+
+.price{
+    font-family: PoppinsRegular;
+    font-weight: 400;
+font-size: 16px;
+color: #092E3D; 
+ 
+}
+.priceTile{
+    font-family: PoppinsRegular;
+    font-weight: 400;
+font-size: 16px;
+color: #4AB449;  
+margin-right: 20px;
+}
+.detailsButton{
+    width: 160px;
+height: 46px;
+background: #4AB449;
+border-radius: 5px;
+font-weight: 500;
+font-size: 16px;
+color: #E6F8FF;
+margin: 0 auto;
+border: none;
+margin-left: 25%;
+}
+.daysButton{
+    width: 100px;
+height: 40px;
+right: 20px;
+top: 340px;
+position: absolute;
+border: none;
+background: #E6F8FF;
+border-radius: 5px;
+font-family: PoppinsRegular;
+font-size: 16px;
+font-weight: 500;
+color: #092E3D;
+}
+.packageTitle{
+    font-family: PoppinsRegular;
+    font-size: 20px;
+line-height: 30px;
+color: #092E3D;
+font-weight: 500;
+}

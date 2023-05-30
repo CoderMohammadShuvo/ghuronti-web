@@ -1,0 +1,9 @@
+.adVideomAIN{
+    max-width: 1100px;
+    margin: 40px auto;
+
+    height: 300px;
+}
+.adVideomAIN img{
+    width: 100%;
+}

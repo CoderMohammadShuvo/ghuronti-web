@@ -17,13 +17,12 @@
 }
 .heroBoxMain{
     max-width: 1100px;
-    height: 290px;
+ 
     background: linear-gradient(180deg, rgba(230, 248, 255, 0.33) 0%, rgba(229, 248, 255, 0.33) 100%);
 box-shadow: 0px 2px 12px rgba(25, 171, 227, 0.3);
 border-radius: 42px;
 margin: 0 auto;
-display: flex;
-justify-content: space-between;
+
 overflow: hidden;
 
 }
@@ -34,6 +33,11 @@ overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.heroboxContent{
+    width: 100%;
+    
+    padding: 20px;
 }
 .optionsOfHero p{
     font-size: 18px;
@@ -49,6 +53,18 @@ overflow: hidden;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+}
+.hajjbuttonActive{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(230, 248, 255, 0.3);
+    border: 1px solid #4AB449;
+    border-radius: 20px 20px 20px 0px;
 }
 .optionButton{
     width: 13%;
@@ -57,4 +73,151 @@ overflow: hidden;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+.optionButtonActive{
+    width: 13%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(230, 248, 255, 0.3);
+    border: 1px solid #4AB449;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.mainContent{
+    max-width: 1100px;
+    margin: 30px auto;
+
+}
+.hajjPackage{
+    margin: 0 auto;
+    width: 376px;
+height: 40px;
+background: #FFFFFF;
+border: 1px solid #4AB449;
+box-shadow: 0px 2px 4px rgba(25, 171, 227, 0.3);
+border-radius: 5px;
+display: flex;
+}
+.flightPackage{
+    margin: 0 auto;
+    width:  465px;
+height: 40px;
+background: #FFFFFF;
+border: 1px solid #4AB449;
+box-shadow: 0px 2px 4px rgba(25, 171, 227, 0.3);
+border-radius: 5px;
+display: flex;
+}
+.hajjPackageButton{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hajjButtonSubActive{
+    font-family: PoppinsRegular;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    font-style: normal;
+font-weight: 500;
+font-size: 16px;
+color: #092E3D;
+border-radius: 2px;
+}
+.hajjPackagesButton{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bookButton{
+    width: 236px;
+height: 53px;
+background: #19ABE3;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+color: white;
+font-family: PoppinsRegular;
+font-size: 18px;
+border: none;
+margin-top: 30px;
+}
+
+.navDIv{
+    display: flex;
+}
+
+.inputMain{
+    width: 418px;
+height: 65px;
+filter: drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.12));
+padding-left: 10px;
+background: #FFFFFF;
+border: 1px solid #4AB449;
+border-radius: 5px;
+margin: 10px;
+padding-top: 5px;
+}
+.inputMain p{
+    font-weight: 800;
+font-size: 16px;
+margin: 0;
+color: #092E3D;
+font-family: PoppinsRegular;
+}
+.locationInput{
+    font-family: PoppinsRegular;
+    border: none;
+    height: 30px;
+    width: 90%;
+    font-size: 16px;
+}
+.inputMainDate{
+    width: 418px;
+height: 65px;
+filter: drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.12));
+padding-left: 10px;
+background: #FFFFFF;
+border: 1px solid #4AB449;
+border-radius: 5px;
+margin: 10px;
+
+display: flex;
+}
+.dateFirst{
+    height: 100%;
+    width: 50%;
+    border-right: 1px solid #4AB449;
+}
+.dateFirst p{
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0;
+    color: #092E3D;
+    font-family: PoppinsRegular;
+}
+.trending{
+    text-align: center;
+    font-weight: 600;
+    font-size: 36px;
+    color: #092E3D;   
+    font-family: PoppinsRegular;
+    margin-top: 40px;
+}
+.trendingPera{
+    font-family: PoppinsRegular;
+    font-weight: 500;
+font-size: 16px;
+color: #738187;
+text-align: center;
 }

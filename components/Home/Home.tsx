@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Shared/Navbar'
 import styles from './Home.module.css'
+import Hajj from './Hajj/Hajj';
+import AdVideo from '../Shared/AdVideo/AdVideo';
+import Footer from '../Shared/Footer/Footer';
+import SliderFocus from '../Shared/SliderFocus/SliderFocus';
+import Flitght from './Flight/Flitght';
+import TrendingSlider from '../Shared/TrendingSLider/TrendingSlider';
+import Mission from '../Shared/Mission/Mission';
 const Home = () => {
+    const [hazzSubButtonActive, setHazzSubBUttonActive] = useState(0);
+    const [option, setOption] = useState(0);
     return (
         <div className={styles.homeMain}>
             <div className={styles.homeHero}>
@@ -9,7 +18,7 @@ const Home = () => {
                 <h1 className={styles.titleHero}>Welcome to Ghuronti! Find Tours, Flights & Hotels Packages</h1>
                 <div className={styles.heroBoxMain}>
                     <div className={styles.optionsOfHero}>
-                        <div className={styles.hajjButton}>
+                        <div className={option === 0 ? styles.hajjbuttonActive : styles.hajjButton}  onClick={() => setOption(0)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={40}
@@ -50,7 +59,7 @@ const Home = () => {
                             </svg>
                             <p>Hajj & Umrah</p>
                         </div>
-                        <div className={styles.optionButton}>
+                        <div className={option === 1 ? styles.optionButtonActive : styles.optionButton} onClick={() => setOption(1)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={40}
@@ -80,7 +89,7 @@ const Home = () => {
                             </svg>
                             <p>Flight</p>
                         </div>
-                        <div className={styles.optionButton}>
+                        <div className={option === 2 ? styles.optionButtonActive : styles.optionButton} onClick={() => setOption(2)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={40}
@@ -104,7 +113,7 @@ const Home = () => {
                             <p>Hotel</p>
                         </div>
 
-                        <div className={styles.optionButton}>
+                        <div className={option === 3 ? styles.optionButtonActive : styles.optionButton} onClick={() => setOption(3)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={45}
@@ -126,7 +135,7 @@ const Home = () => {
                             </svg>
                             <p>Visa</p>
                         </div>
-                        <div className={styles.optionButton}>
+                        <div className={option === 4 ? styles.optionButtonActive : styles.optionButton} onClick={() => setOption(4)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={35}
@@ -148,7 +157,7 @@ const Home = () => {
                             <p>Tours</p>
                         </div>
 
-                        <div className={styles.optionButton}>
+                        <div className={option === 5 ? styles.optionButtonActive : styles.optionButton} onClick={() => setOption(5)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={40}
@@ -163,7 +172,7 @@ const Home = () => {
                             </svg>
                             <p>Buses</p>
                         </div>
-                        <div className={styles.optionButton}>
+                        <div className={option === 6 ? styles.optionButtonActive : styles.optionButton} onClick={() => setOption(6)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={40}
@@ -220,7 +229,93 @@ const Home = () => {
                             <p>Trains</p>
                         </div>
                     </div>
+                    <div className={styles.heroboxContent}>
+                     {
+                        option === 0 ? <>
+                           <div className={styles.hajjPackage}>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none"}}>Hajj Packages</p>
+                             </div>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none"}}>Umrah Packages</p>
+                             </div>
+                        </div>
+                        <div className={styles.hajjPackagesButton}>
+                            <button className={styles.bookButton}>Get Your Offers</button>
+                        </div>
+                            </> : null
+                     }
+
+                     {
+                        option === 1 ?  <>
+                        <div className={styles.flightPackage}>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none"}}>One Way</p>
+                             </div>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none"}}>Round Trip</p>
+                             </div>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(2)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 2 ? "3px solid #4AB449" : "none"}}>Multi City</p>
+                             </div>
+                        </div> 
+                        
+                        <div className={styles.hajjPackagesButton}>
+                        <div className={styles.navDIv}>
+                            <div className={styles.inputMain}>
+                                <p>Flying From</p>
+                                <input type="text" className={styles.locationInput} placeholder='City or Airport' />
+                            </div>
+                            <div className={styles.inputMain}>
+                                <p>Flying To</p>
+                                <input type="text" className={styles.locationInput} placeholder='City or Airport' />
+                            </div>
+                        </div>
+                        <div className={styles.navDIv}>
+                            <div className={styles.inputMainDate}>
+                              <div className={styles.dateFirst}>
+                              <p>Depart To</p>
+                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
+                              </div>
+                              <div className={styles.dateFirst}>
+                              <p style={{marginLeft:"10px"}}>Return To</p>
+                                <input type="date" style={{marginLeft:"10px"}} className={styles.locationInput} placeholder='City or Airport' />
+                              </div>
+                            </div>
+                            <div className={styles.inputMain}>
+                                <p>Passengers & Cabin Class</p>
+                                <input type="text" className={styles.locationInput} placeholder='1 Person   ' />
+                            </div>
+                        </div>
+                        
+                    </div></>: null
+                     }
+                    </div>
                 </div>
+                <div className={styles.mainContent}>
+                    {
+                        option === 0 ? <>
+                            <Hajj/>
+                        <AdVideo/>
+                        </> : null
+                    }
+                    
+                </div>
+                {
+                        option === 1 ? <>
+                        <Flitght/>
+                        <AdVideo/>
+                        <h1 className={styles.trending}>Trending International Destinations</h1>
+                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                        <TrendingSlider/>
+                        <h1 className={styles.trending}>Our Mission &  Vision</h1>
+                        <p className={styles.trendingPera}>Serving our customer, searching their entire satisfaction and providing <br /> touristic services of quality, committing to the social, cultural and <br /> environmental reality of our country.</p>
+                        <Mission/>
+                        </> : null
+                    }
+
+                  
+                <Footer/>
             </div>
 {/* 
 dfadsf */}

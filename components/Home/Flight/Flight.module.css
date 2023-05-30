@@ -1,0 +1,21 @@
+.flightMain{
+    overflow: hidden;
+    width: 80%;
+    margin-left: 20%;
+}
+.flightMain h1{
+    text-align: left;
+    font-weight: 600;
+    font-size: 36px;
+    color: #092E3D;   
+    font-family: PoppinsRegular;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.flightMain p{
+    font-family: PoppinsRegular;
+    font-weight: 500;
+font-size: 16px;
+color: #738187;
+margin-left: 20px;
+}
