@@ -133,7 +133,6 @@ border-radius: 2px;
 }
 .hajjPackagesButton{
     width: 100%;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -220,4 +219,31 @@ display: flex;
 font-size: 16px;
 color: #738187;
 text-align: center;
+}
+
+.visaSearch{
+    width: 733px;
+height: 65px;
+margin: 20px auto;
+display: flex;
+align-items: center;
+overflow: hidden;
+border: 1px solid #4AB449;
+background: #FFFFFF;
+border-radius: 10px;
+padding-left: 20px;
+}
+.visaSearch input{
+    width: 520px;
+    height: 90%;
+    border: none;
+}
+.visaSearch button{
+    width: 179px;
+    height: 100%;
+    background: #4AB449;
+    color: white;
+    font-family: PoppinsRegular;
+    border: none;
+    cursor: pointer;
 }

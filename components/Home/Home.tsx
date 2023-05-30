@@ -8,9 +8,33 @@ import SliderFocus from '../Shared/SliderFocus/SliderFocus';
 import Flitght from './Flight/Flitght';
 import TrendingSlider from '../Shared/TrendingSLider/TrendingSlider';
 import Mission from '../Shared/Mission/Mission';
+import Review from '../Shared/Review/Review';
+import Visa from './Visa/Visa';
 const Home = () => {
     const [hazzSubButtonActive, setHazzSubBUttonActive] = useState(0);
     const [option, setOption] = useState(0);
+    const data = [
+        {
+            img: '/images/1.png',
+            region: 'Cox’s Bazar',
+            price: '15000'
+        },
+        {
+            img: '/images/2.png',
+            region: 'Shylet',
+            price: '3000'
+        },
+        {
+            img: '/images/3.png',
+            region: 'Saint Martin',
+            price: '4500'
+        },
+        {
+            img: '/images/4.png',
+            region: 'Sundarban',
+            price: '6000'
+        }
+    ]
     return (
         <div className={styles.homeMain}>
             <div className={styles.homeHero}>
@@ -18,7 +42,7 @@ const Home = () => {
                 <h1 className={styles.titleHero}>Welcome to Ghuronti! Find Tours, Flights & Hotels Packages</h1>
                 <div className={styles.heroBoxMain}>
                     <div className={styles.optionsOfHero}>
-                        <div className={option === 0 ? styles.hajjbuttonActive : styles.hajjButton}  onClick={() => setOption(0)}>
+                        <div className={option === 0 ? styles.hajjbuttonActive : styles.hajjButton} onClick={() => setOption(0)}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={40}
@@ -230,25 +254,101 @@ const Home = () => {
                         </div>
                     </div>
                     <div className={styles.heroboxContent}>
-                     {
-                        option === 0 ? <>
-                           <div className={styles.hajjPackage}>
-                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
-                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none"}}>Hajj Packages</p>
-                             </div>
-                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
-                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none"}}>Umrah Packages</p>
-                             </div>
-                        </div>
-                        <div className={styles.hajjPackagesButton}>
-                            <button className={styles.bookButton}>Get Your Offers</button>
-                        </div>
+                        {
+                            option === 0 ? <>
+                                <div className={styles.hajjPackage}>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none" }}>Hajj Packages</p>
+                                    </div>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none" }}>Umrah Packages</p>
+                                    </div>
+                                </div>
+                                <div className={styles.hajjPackagesButton}>
+                                    <button className={styles.bookButton}>Get Your Offers</button>
+                                </div>
                             </> : null
-                     }
+                        }
 
-                     {
-                        option === 1 ?  <>
-                        <div className={styles.flightPackage}>
+                        {
+                            option === 1 ? <>
+                                <div className={styles.flightPackage}>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none" }}>One Way</p>
+                                    </div>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none" }}>Round Trip</p>
+                                    </div>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(2)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 2 ? "3px solid #4AB449" : "none" }}>Multi City</p>
+                                    </div>
+                                </div>
+
+                                <div className={styles.hajjPackagesButton}>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMain}>
+                                            <p>Flying From</p>
+                                            <input type="text" className={styles.locationInput} placeholder='City or Airport' />
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Flying To</p>
+                                            <input type="text" className={styles.locationInput} placeholder='City or Airport' />
+                                        </div>
+                                    </div>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMainDate}>
+                                            <div className={styles.dateFirst}>
+                                                <p>Depart To</p>
+                                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                            <div className={styles.dateFirst}>
+                                                <p style={{ marginLeft: "10px" }}>Return To</p>
+                                                <input type="date" style={{ marginLeft: "10px" }} className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Passengers & Cabin Class</p>
+                                            <input type="text" className={styles.locationInput} placeholder='1 Person   ' />
+                                        </div>
+                                    </div>
+
+                                </div></> : null
+                        }
+
+                        {
+                            option === 3 ? <>
+                                <div className={styles.hajjPackage}>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none" }}>Hajj Packages</p>
+                                    </div>
+                                    <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
+                                        <p className={styles.hajjButtonSubActive} style={{ borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none" }}>Umrah Packages</p>
+                                    </div>
+                                </div>
+                                <div className={styles.hajjPackagesButton}>
+                                    <div className={styles.visaSearch}>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width={40}
+                                            height={38}
+                                            fill="none"
+                                        
+                                        >
+                                            <path
+                                                fill="#738187"
+                                                d="M26.914 21.578c1.172-1.71 1.86-3.737 1.86-5.916 0-6.09-5.32-11.028-11.883-11.028C10.32 4.634 5 9.572 5 15.662c0 6.09 5.32 11.028 11.883 11.028 2.383 0 4.601-.652 6.46-1.767l.54-.348 8.484 7.864L35 29.955l-8.477-7.863.391-.514ZM23.547 9.5c1.773 1.644 2.75 3.83 2.75 6.155 0 2.324-.977 4.51-2.75 6.154-1.774 1.644-4.133 2.55-6.64 2.55-2.509 0-4.868-.906-6.641-2.55-1.774-1.643-2.75-3.83-2.75-6.154 0-2.325.976-4.511 2.75-6.155 1.773-1.644 4.132-2.549 6.64-2.549s4.867.905 6.64 2.549Z"
+                                            />
+                                        </svg>
+                                        <input type="text" placeholder=''/>
+                                        <button>Search visa</button>
+                                    </div>
+                                </div>
+                            </> : null
+                        }
+
+                        {
+                            option === 2 ? <>
+                                {/* <div className={styles.flightPackage}>
                              <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
                                 <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none"}}>One Way</p>
                              </div>
@@ -258,66 +358,254 @@ const Home = () => {
                              <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(2)}>
                                 <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 2 ? "3px solid #4AB449" : "none"}}>Multi City</p>
                              </div>
-                        </div> 
-                        
-                        <div className={styles.hajjPackagesButton}>
-                        <div className={styles.navDIv}>
-                            <div className={styles.inputMain}>
-                                <p>Flying From</p>
-                                <input type="text" className={styles.locationInput} placeholder='City or Airport' />
-                            </div>
-                            <div className={styles.inputMain}>
-                                <p>Flying To</p>
-                                <input type="text" className={styles.locationInput} placeholder='City or Airport' />
-                            </div>
-                        </div>
-                        <div className={styles.navDIv}>
-                            <div className={styles.inputMainDate}>
-                              <div className={styles.dateFirst}>
-                              <p>Depart To</p>
-                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
-                              </div>
-                              <div className={styles.dateFirst}>
-                              <p style={{marginLeft:"10px"}}>Return To</p>
-                                <input type="date" style={{marginLeft:"10px"}} className={styles.locationInput} placeholder='City or Airport' />
-                              </div>
-                            </div>
-                            <div className={styles.inputMain}>
-                                <p>Passengers & Cabin Class</p>
-                                <input type="text" className={styles.locationInput} placeholder='1 Person   ' />
-                            </div>
-                        </div>
-                        
-                    </div></>: null
-                     }
+                        </div>  */}
+
+                                <div className={styles.hajjPackagesButton}>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMain}>
+                                            <p>City/Hotel/Street Name</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Enter your city' />
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Nationality</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Bangladesh' />
+                                        </div>
+                                    </div>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMainDate}>
+                                            <div className={styles.dateFirst}>
+                                                <p>Check In </p>
+                                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                            <div className={styles.dateFirst}>
+                                                <p style={{ marginLeft: "10px" }}>Check Out </p>
+                                                <input type="date" style={{ marginLeft: "10px" }} className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Rooms & Guests</p>
+                                            <input type="text" className={styles.locationInput} placeholder='1 Person   ' />
+                                        </div>
+                                    </div>
+
+                                </div></> : null
+                        }
+
+
+                        {
+                            option === 4 ? <>
+                                {/* <div className={styles.flightPackage}>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(0)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 0 ? "3px solid #4AB449" : "none"}}>One Way</p>
+                             </div>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(1)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 1 ? "3px solid #4AB449" : "none"}}>Round Trip</p>
+                             </div>
+                             <div className={styles.hajjPackageButton} onClick={() => setHazzSubBUttonActive(2)}>
+                                <p className={styles.hajjButtonSubActive} style={{borderBottom: hazzSubButtonActive === 2 ? "3px solid #4AB449" : "none"}}>Multi City</p>
+                             </div>
+                        </div>  */}
+
+
+
+                                <div className={styles.hajjPackagesButton}>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMain}>
+                                            <p>Where To ?</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Enter your city' />
+                                        </div>
+                                        <div className={styles.inputMainDate}>
+                                            <div className={styles.dateFirst}>
+                                                <p>Depart To</p>
+                                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                            <div className={styles.dateFirst}>
+                                                <p style={{ marginLeft: "10px" }}>Return To</p>
+                                                <input type="date" style={{ marginLeft: "10px" }} className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div className={styles.hajjPackagesButton}>
+                                    <button className={styles.bookButton}>Get Your Offers</button>
+                                </div></> : null
+                        }
+
+                        {
+                            option === 5 ? <>
+                                <div className={styles.hajjPackagesButton}>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMain}>
+                                            <p>Travel From</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Enter your city' />
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Travel To</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Bangladesh' />
+                                        </div>
+                                    </div>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMainDate}>
+                                            <div className={styles.dateFirst}>
+                                                <p>Depart To</p>
+                                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                            <div className={styles.dateFirst}>
+                                                <p style={{ marginLeft: "10px" }}>Return To</p>
+                                                <input type="date" style={{ marginLeft: "10px" }} className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Passengers & Seat Class</p>
+                                            <input type="text" className={styles.locationInput} placeholder='1 Person   ' />
+                                        </div>
+                                    </div>
+
+                                </div></> : null
+                        }
+
+                        {
+                            option === 6 ? <>
+                                <div className={styles.hajjPackagesButton}>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMain}>
+                                            <p>Travel From</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Enter your city' />
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Travel To</p>
+                                            <input type="text" className={styles.locationInput} placeholder='Bangladesh' />
+                                        </div>
+                                    </div>
+                                    <div className={styles.navDIv}>
+                                        <div className={styles.inputMainDate}>
+                                            <div className={styles.dateFirst}>
+                                                <p>Depart To</p>
+                                                <input type="date" className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                            <div className={styles.dateFirst}>
+                                                <p style={{ marginLeft: "10px" }}>Return To</p>
+                                                <input type="date" style={{ marginLeft: "10px" }} className={styles.locationInput} placeholder='City or Airport' />
+                                            </div>
+                                        </div>
+                                        <div className={styles.inputMain}>
+                                            <p>Passengers & Seat Class</p>
+                                            <input type="text" className={styles.locationInput} placeholder='1 Person   ' />
+                                        </div>
+                                    </div>
+
+                                </div></> : null
+                        }
+
                     </div>
                 </div>
                 <div className={styles.mainContent}>
                     {
                         option === 0 ? <>
-                            <Hajj/>
-                        <AdVideo/>
-                        </> : null
-                    }
-                    
-                </div>
-                {
-                        option === 1 ? <>
-                        <Flitght/>
-                        <AdVideo/>
-                        <h1 className={styles.trending}>Trending International Destinations</h1>
-                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
-                        <TrendingSlider/>
-                        <h1 className={styles.trending}>Our Mission &  Vision</h1>
-                        <p className={styles.trendingPera}>Serving our customer, searching their entire satisfaction and providing <br /> touristic services of quality, committing to the social, cultural and <br /> environmental reality of our country.</p>
-                        <Mission/>
+                            <Hajj />
+                            <AdVideo />
                         </> : null
                     }
 
-                  
-                <Footer/>
+                </div>
+                {
+                    option === 1 ? <>
+                        <Flitght />
+                        <AdVideo />
+                        <h1 className={styles.trending}>Trending International Destinations</h1>
+                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Our Mission &  Vision</h1>
+                        <p className={styles.trendingPera}>Serving our customer, searching their entire satisfaction and providing <br /> touristic services of quality, committing to the social, cultural and <br /> environmental reality of our country.</p>
+                        <Mission />
+                        <h1 className={styles.trending}>Customer satisfaction is our top priority</h1>
+                        <p className={styles.trendingPera}>Our clients praise us for our great results, personable service,  <br />expert knowledge. Here are what just a few of them had to say</p>
+
+                        <Review />
+                    </> : null
+                }
+                {
+                    option === 2 ?
+                        <>
+                            <h1 className={styles.trending}>Trending International Destinations</h1>
+                            <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                            <TrendingSlider />
+                            <AdVideo />
+                            <h1 className={styles.trending}>Trending Indian Destinations Hotels</h1>
+                            <p className={styles.trendingPera}>India’s diverse topography, history and culture offers enough <br />experiences to fulfil any type of wanderlust.</p>
+                            <TrendingSlider />
+                            <h1 className={styles.trending}>Customer satisfaction is our top priority</h1>
+                            <p className={styles.trendingPera}>Our clients praise us for our great results, personable service,  <br />expert knowledge. Here are what just a few of them had to say</p>
+
+                            <Review />
+                        </>
+                        : null
+                }
+                {
+                    option === 3 ? <>
+                        <Visa/>
+                        <AdVideo/>
+                    </> : null
+                }
+                {
+                    option === 4 ? <>
+                        <h1 className={styles.trending}>Trending International Destinations</h1>
+                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                        <SliderFocus data={data} />
+                        <AdVideo />
+                        <h1 className={styles.trending}>Trending International Destinations</h1>
+                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Trending Indian Destinations Hotels</h1>
+                        <p className={styles.trendingPera}>India’s diverse topography, history and culture offers enough <br />experiences to fulfil any type of wanderlust.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Customer satisfaction is our top priority</h1>
+                        <p className={styles.trendingPera}>Our clients praise us for our great results, personable service,  <br />expert knowledge. Here are what just a few of them had to say</p>
+                        <Review />
+                    </> : null
+                }
+
+                {
+                    option === 5 ? <>
+                        <h1 className={styles.trending}>Best Places To Visit In Bangladesh</h1>
+                        <p className={styles.trendingPera}>Bangladesh is a South Asian country with a rich cultural heritage <br />and natural beauty. It is home to the world's largest mangrove  <br />orest,  culture, and natural beauty.</p>
+                        <SliderFocus data={data} />
+                        <AdVideo />
+                        <h1 className={styles.trending}>Trending International Destinations</h1>
+                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Trending Indian Destinations Hotels</h1>
+                        <p className={styles.trendingPera}>India’s diverse topography, history and culture offers enough <br />experiences to fulfil any type of wanderlust.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Customer satisfaction is our top priority</h1>
+                        <p className={styles.trendingPera}>Our clients praise us for our great results, personable service,  <br />expert knowledge. Here are what just a few of them had to say</p>
+                        <Review />
+                    </> : null
+                }
+
+                {
+                    option === 6 ? <>
+                        <h1 className={styles.trending}>Best Places To Visit In Bangladesh</h1>
+                        <p className={styles.trendingPera}>Bangladesh is a South Asian country with a rich cultural heritage <br />and natural beauty. It is home to the world's largest mangrove  <br />orest,  culture, and natural beauty.</p>
+                        <SliderFocus data={data} />
+                        <AdVideo />
+                        <h1 className={styles.trending}>Trending International Destinations</h1>
+                        <p className={styles.trendingPera}>The world is now just a hop, skip and jump away and here’s how<br />you can make your travel easier and better.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Trending Indian Destinations Hotels</h1>
+                        <p className={styles.trendingPera}>India’s diverse topography, history and culture offers enough <br />experiences to fulfil any type of wanderlust.</p>
+                        <TrendingSlider />
+                        <h1 className={styles.trending}>Customer satisfaction is our top priority</h1>
+                        <p className={styles.trendingPera}>Our clients praise us for our great results, personable service,  <br />expert knowledge. Here are what just a few of them had to say</p>
+                        <Review />
+                    </> : null
+                }
+
+                <Footer />
             </div>
-{/* 
+            {/* 
 dfadsf */}
         </div>
     )

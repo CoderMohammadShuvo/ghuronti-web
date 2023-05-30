@@ -1,0 +1,24 @@
+.reviewMain{
+    max-width: 1100px;
+    height: 400px;
+    margin: 20px auto;
+
+}
+.reviewFirstSlide{
+    height: 325px;
+    width: 100%;
+    background: url('../../../public/images/reviewBg.png');
+    background-size: 100% 100%;
+    background-position: left top;
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.reviewFirstSlide h3{
+    text-align: center;
+    font-family: PoppinsRegular;
+    color: #092E3D;
+    margin-top: 150px;
+}
